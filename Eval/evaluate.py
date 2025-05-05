@@ -56,12 +56,115 @@ LEGAL_RELATION_LABELS = [
 ]
 
 
+
+def remove_duplicated_entities(predictions: dict) -> None:
+    removed_count = 0
+    for pmid in list(predictions.keys()):
+        seen = set()
+        deduped = []
+        for ent in predictions[pmid]["entities"]:
+            key = (ent["start_idx"], ent["end_idx"], ent["location"])
+            if key not in seen:
+                seen.add(key)
+                deduped.append(ent)
+            else:
+                removed_count += 1
+        predictions[pmid]["entities"] = deduped
+    
+    if removed_count > 0:
+        print(f"=== Removed {removed_count} duplicated entities from predictions ===")
+    else:
+        #print("=== No duplicated entities found in predictions ===")
+        pass
+
+def remove_overlapping_entities(predictions: dict) -> None:
+    removed_count = 0
+
+    # Iterate over PMIDs
+    for pmid in list(predictions.keys()):
+        original_len = len(predictions[pmid]['entities'])
+        
+        # Group entities by location
+        groups = {'title': [], 'abstract': []}
+        for ent in predictions[pmid]['entities']:
+            loc = ent["location"]
+            groups[loc].append(ent)
+
+        # For each location, build overlap clusters and select the longest
+        keepers = set()
+        for loc in groups:
+            group = groups[loc]
+            # sort by start_idx so we have overlapping entities contiguous
+            group = sorted(group, key=lambda e: e["start_idx"])
+
+            clusters = []
+            cluster = []
+            current_end = None
+
+            for ent in group:
+                if not cluster:
+                    # start the first cluster
+                    cluster = [ent]
+                    current_end = ent["end_idx"]
+                else:
+                    # check overlap: ent.start_idx < current_end
+                    if ent["start_idx"] < current_end:
+                        cluster.append(ent)
+                        # extend cluster span if needed
+                        if ent["end_idx"] > current_end:
+                            current_end = ent["end_idx"]
+                    else:
+                        clusters.append(cluster)
+                        cluster = [ent]
+                        current_end = ent["end_idx"]
+            if cluster:
+                clusters.append(cluster)
+
+            # pick the longest entity in each cluster
+            for clust in clusters:
+                # initialize with first entity
+                longest = clust[0]
+                max_len = longest["end_idx"] - longest["start_idx"]
+                # compare with the rest
+                for ent in clust[1:]:
+                    length = ent["end_idx"] - ent["start_idx"]
+                    if length > max_len:
+                        longest = ent
+                        max_len = length
+                # track by (start, end, loc)
+                keepers.add((longest["start_idx"],
+                             longest["end_idx"],
+                             longest["location"]))
+
+        # Rebuild the entity list in original order, keeping only the keepers
+        deduped = []
+        for ent in predictions[pmid]['entities']:
+            key = (ent["start_idx"], ent["end_idx"], ent["location"])
+            if key in keepers:
+                deduped.append(ent)
+                keepers.remove(key)  # avoid duplicates
+
+        predictions[pmid]["entities"] = deduped
+
+        # count how many overlapping entities have been removed for this document
+        removed_count += (original_len - len(deduped))
+
+    if removed_count > 0:
+        print(f"=== Removed {removed_count} overlapping entities ===")
+    else:
+        #print("=== No overlapping entity found ===")
+        pass
+
 def eval_submission_6_1_NER(path):
     try:
         with open(path, 'r', encoding='utf-8') as file:
             predictions = json.load(file)
     except OSError:
         raise OSError(f'Error in opening the specified json file: {path}')
+
+    # Remove duplicated and overlapping entities
+    remove_duplicated_entities(predictions)
+    remove_overlapping_entities(predictions)
     
     ground_truth_NER = dict()
     count_annotated_entities_per_label = {}
@@ -137,13 +240,38 @@ def eval_submission_6_1_NER(path):
 
     return precision, recall, f1, micro_precision, micro_recall, micro_f1
 
+
+
+def remove_duplicated_binary_tag_relations(predictions: dict) -> None:
+    removed_count = 0
+    for pmid in list(predictions.keys()):
+        seen = set()
+        deduped = []
+        for rel in predictions[pmid]["binary_tag_based_relations"]:
+            key = (rel["subject_label"], rel["object_label"])
+            if key not in seen:
+                seen.add(key)
+                deduped.append(rel)
+            else:
+                removed_count += 1
+        predictions[pmid]["binary_tag_based_relations"] = deduped
+    
+    if removed_count > 0:
+        print(f"=== Removed {removed_count} duplicated binary tag-based relations from predictions ===")
+    else:
+        #print("=== No duplicated binary tag-based relations found in predictions ===")
+        pass
+
 def eval_submission_6_2_binary_tag_RE(path):
     try:
         with open(path, 'r', encoding='utf-8') as file:
             predictions = json.load(file)
     except OSError:
         raise OSError(f'Error in opening the specified json file: {path}')
-    
+
+    # Remove duplicated binary tag-based relations
+    remove_duplicated_binary_tag_relations(predictions)
+
     ground_truth_binary_tag_RE = dict()
     count_annotated_relations_per_label = {}
 
@@ -216,12 +344,36 @@ def eval_submission_6_2_binary_tag_RE(path):
     return precision, recall, f1, micro_precision, micro_recall, micro_f1
 
 
+
+def remove_duplicated_ternary_tag_relations(predictions: dict) -> None:
+    removed_count = 0
+    for pmid in list(predictions.keys()):
+        seen = set()
+        deduped = []
+        for rel in predictions[pmid]["ternary_tag_based_relations"]:
+            key = (rel["subject_label"], rel["predicate"], rel["object_label"])
+            if key not in seen:
+                seen.add(key)
+                deduped.append(rel)
+            else:
+                removed_count += 1
+        predictions[pmid]["ternary_tag_based_relations"] = deduped
+    
+    if removed_count > 0:
+        print(f"=== Removed {removed_count} duplicated ternary tag-based relations from predictions ===")
+    else:
+        #print("=== No duplicated ternary tag-based relations found in predictions ===")
+        pass
+
 def eval_submission_6_3_ternary_tag_RE(path):
     try:
         with open(path, 'r', encoding='utf-8') as file:
             predictions = json.load(file)
     except OSError:
         raise OSError(f'Error in opening the specified json file: {path}')
+
+    # Remove duplicated ternary tag-based relations
+    remove_duplicated_ternary_tag_relations(predictions)
     
     ground_truth_ternary_tag_RE = dict()
     count_annotated_relations_per_label = {}
@@ -300,12 +452,36 @@ def eval_submission_6_3_ternary_tag_RE(path):
     return precision, recall, f1, micro_precision, micro_recall, micro_f1
 
 
+
+def remove_duplicated_ternary_mention_relations(predictions: dict) -> None:
+    removed_count = 0
+    for pmid in list(predictions.keys()):
+        seen = set()
+        deduped = []
+        for rel in predictions[pmid]["ternary_mention_based_relations"]:
+            key = (rel['subject_text_span'], rel["subject_label"], rel["predicate"], rel['object_text_span'], rel["object_label"])
+            if key not in seen:
+                seen.add(key)
+                deduped.append(rel)
+            else:
+                removed_count += 1
+        predictions[pmid]["ternary_mention_based_relations"] = deduped
+    
+    if removed_count > 0:
+        print(f"=== Removed {removed_count} duplicated ternary mention-based relations from predictions ===")
+    else:
+        #print("=== No duplicated ternary mention-based relations found in predictions ===")
+        pass
+
 def eval_submission_6_4_ternary_mention_RE(path):
     try:
         with open(path, 'r', encoding='utf-8') as file:
             predictions = json.load(file)
     except OSError:
         raise OSError(f'Error in opening the specified json file: {path}')
+
+    # Remove duplicated ternary mention-based relations
+    remove_duplicated_ternary_mention_relations(predictions)
     
     ground_truth_ternary_mention_RE = dict()
     count_annotated_relations_per_label = {}
