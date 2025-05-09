@@ -1,6 +1,6 @@
-python atlop_interface.py --data_dir ./data \
+python atlop_interface.py --data_dir ./data/ \
 --transformer_type bert \
---model_name_or_path bert-base-cased \
+--model_name_or_path FacebookAI/roberta-large \
 --train_file train_annotated.json \
 --save_path outputs/ \
 --dev_file dev.json \

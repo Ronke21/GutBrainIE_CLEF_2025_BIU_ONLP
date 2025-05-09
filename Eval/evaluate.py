@@ -1,7 +1,7 @@
 import json
 
 # DEFINE HERE THE PATH(S) TO YOUR PREDICTIONS
-PREDICTIONS_PATH_6_1 = 'org_T61_BaselineRun_NuNerZero.json'
+PREDICTIONS_PATH_6_1 = 'BIU_ONLP_T61_runID_systemDesc.json'
 PREDICTIONS_PATH_6_2 = 'org_T621_BaselineRun_ATLOP.json'
 PREDICTIONS_PATH_6_3 = 'org_T622_BaselineRun_ATLOP.json'
 PREDICTIONS_PATH_6_4 = 'org_T623_BaselineRun_ATLOP.json'

@@ -10,19 +10,20 @@ from importlib.metadata import version
 version('GLiNER')
 
 # Set the GLiNER model to be used (from HuggingFace)
-model = GLiNER.from_pretrained("numind/NuNerZero")
-model_name = "NuNerZero"
+model = GLiNER.from_pretrained("urchade/gliner_multi_pii-v1")
+model_name = "gliner_multi_pii-v1"
 
 # Define the confidence threshold to be used in evaluation
-THRESHOLD = 0.6 
+THRESHOLD = 0.9 
 
 # Define whether the code should be used for fine-tuning
 finetune_model = True
 
 # Define the path to articles for which the final trained will generate predicted entities
-generate_predictions = False
+generate_predictions = True
 PATH_ARTICLES = "../../Articles/json_format/articles_dev.json" 
-PATH_OUTPUT_NER_PREDICTIONS = "../../Predictions/NER/predicted_entities.json"
+PATH_OUTPUT_NER_PREDICTIONS = f"../../Predictions/NER/predicted_entities_{model_name}_T{str(THRESHOLD*100)}.json"
+
 
 print('## LOADING TRAINING DATA ##')
 PATH_PLATINUM_TRAIN = "data/train_platinum.json"
@@ -89,7 +90,7 @@ config = SimpleNamespace(
     
     train_batch_size=8, # regulate batch size depending on GPU memory available.
     
-    max_len=384, # maximum sentence length. 2048 for NuNerZero_long_context
+    max_len=384, # maximum sentence length. 2048 for NuNerZero_long_context, 384 for rest
     
     save_directory="logs", # log dir
     device='cuda' if torch.cuda.is_available() else 'cpu', #'cuda', # training device - cpu or cuda
@@ -217,7 +218,7 @@ if finetune_model:
     md = GLiNER.from_pretrained(output_path, local_files_only=True)
 
 if generate_predictions:
-    output_path = f"outputs"
+    output_path = f"outputs/{model_name}_finetuned_T{str(THRESHOLD*100)}"
     print(f"## LOADING PRE-TRAINED MODEL {output_path} ##")
     md = GLiNER.from_pretrained(output_path, local_files_only=True)
 
