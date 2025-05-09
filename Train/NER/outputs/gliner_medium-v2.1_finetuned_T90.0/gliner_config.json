@@ -12,7 +12,7 @@
   "train_batch_size": 8,
   "eval_every": 5000,
   "max_width": 12,
-  "model_name": "microsoft/deberta-v3-large",
+  "model_name": "microsoft/deberta-v3-base",
   "fine_tune": true,
   "subtoken_pooling": "first",
   "hidden_size": 512,

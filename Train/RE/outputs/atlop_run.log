@@ -516,3 +516,134 @@ Length answer: 433
 [CHECKPOINT] Saving model checkpoint at epoch 28 into outputs/checkpoint.ckpt ...
 
 Train epoch:   6%|5         | 29/500 [1:13:38<19:48:37, 151.42s/it]
+Starting evaluation step ...
+Length preds: 34644
+Length answer: 356
+[CHECKPOINT] Saving model checkpoint at epoch 29 into outputs/checkpoint.ckpt ...
+
+Train epoch:   6%|6         | 30/500 [1:16:09<19:46:18, 151.44s/it]
+Starting evaluation step ...
+Length preds: 34644
+Length answer: 456
+[CHECKPOINT] Saving model checkpoint at epoch 30 into outputs/checkpoint.ckpt ...
+
+Train epoch:   6%|6         | 31/500 [1:18:42<19:47:15, 151.89s/it]
+Starting evaluation step ...
+Length preds: 34644
+Length answer: 436
+[CHECKPOINT] Saving model checkpoint at epoch 31 into outputs/checkpoint.ckpt ...
+[BEST] Saving best model (epoch: 31) into outputs/best.ckpt ...
+
+Train epoch:   6%|6         | 32/500 [1:21:18<19:53:57, 153.07s/it]
+Starting evaluation step ...
+Length preds: 34644
+Length answer: 453
+[CHECKPOINT] Saving model checkpoint at epoch 32 into outputs/checkpoint.ckpt ...
+
+Train epoch:   7%|6         | 33/500 [1:23:50<19:47:44, 152.60s/it]
+Starting evaluation step ...
+Length preds: 34644
+Length answer: 275
+[CHECKPOINT] Saving model checkpoint at epoch 33 into outputs/checkpoint.ckpt ...
+
+Train epoch:   7%|6         | 34/500 [1:26:21<19:41:35, 152.14s/it]
+Starting evaluation step ...
+Length preds: 34644
+Length answer: 406
+[CHECKPOINT] Saving model checkpoint at epoch 34 into outputs/checkpoint.ckpt ...
+
+Train epoch:   7%|7         | 35/500 [1:28:52<19:37:28, 151.93s/it]
+Starting evaluation step ...
+Length preds: 34644
+Length answer: 563
+[CHECKPOINT] Saving model checkpoint at epoch 35 into outputs/checkpoint.ckpt ...
+
+Train epoch:   7%|7         | 36/500 [1:31:24<19:34:36, 151.89s/it]
+Starting evaluation step ...
+Length preds: 34644
+Length answer: 508
+[CHECKPOINT] Saving model checkpoint at epoch 36 into outputs/checkpoint.ckpt ...
+
+Train epoch:   7%|7         | 37/500 [1:33:56<19:32:00, 151.88s/it]
+Starting evaluation step ...
+Length preds: 34644
+Length answer: 354
+[CHECKPOINT] Saving model checkpoint at epoch 37 into outputs/checkpoint.ckpt ...
+
+Train epoch:   8%|7         | 38/500 [1:36:27<19:29:07, 151.83s/it]
+Starting evaluation step ...
+Length preds: 34644
+Length answer: 344
+[CHECKPOINT] Saving model checkpoint at epoch 38 into outputs/checkpoint.ckpt ...
+
+Train epoch:   8%|7         | 39/500 [1:38:59<19:27:02, 151.89s/it]
+Starting evaluation step ...
+Length preds: 34644
+Length answer: 265
+[CHECKPOINT] Saving model checkpoint at epoch 39 into outputs/checkpoint.ckpt ...
+
+Train epoch:   8%|8         | 40/500 [1:41:31<19:24:11, 151.85s/it]
+Starting evaluation step ...
+Length preds: 34644
+Length answer: 463
+[CHECKPOINT] Saving model checkpoint at epoch 40 into outputs/checkpoint.ckpt ...
+[BEST] Saving best model (epoch: 40) into outputs/best.ckpt ...
+
+Train epoch:   8%|8         | 41/500 [1:44:07<19:31:44, 153.17s/it]
+Starting evaluation step ...
+Length preds: 34644
+Length answer: 348
+[CHECKPOINT] Saving model checkpoint at epoch 41 into outputs/checkpoint.ckpt ...
+
+Train epoch:   8%|8         | 42/500 [1:46:39<19:25:41, 152.71s/it]
+Starting evaluation step ...
+Length preds: 34644
+Length answer: 405
+[CHECKPOINT] Saving model checkpoint at epoch 42 into outputs/checkpoint.ckpt ...
+[BEST] Saving best model (epoch: 42) into outputs/best.ckpt ...
+
+Train epoch:   9%|8         | 43/500 [1:49:15<19:31:20, 153.79s/it]
+Starting evaluation step ...
+Length preds: 34644
+Length answer: 410
+[CHECKPOINT] Saving model checkpoint at epoch 43 into outputs/checkpoint.ckpt ...
+
+Train epoch:   9%|8         | 44/500 [1:51:47<19:23:35, 153.10s/it]
+Starting evaluation step ...
+Length preds: 34644
+Length answer: 421
+[CHECKPOINT] Saving model checkpoint at epoch 44 into outputs/checkpoint.ckpt ...
+
+Train epoch:   9%|9         | 45/500 [1:54:18<19:17:03, 152.58s/it]
+Starting evaluation step ...
+Length preds: 34644
+Length answer: 420
+[CHECKPOINT] Saving model checkpoint at epoch 45 into outputs/checkpoint.ckpt ...
+
+Train epoch:   9%|9         | 46/500 [1:56:51<19:14:09, 152.53s/it]
+Starting evaluation step ...
+Length preds: 34644
+Length answer: 362
+[CHECKPOINT] Saving model checkpoint at epoch 46 into outputs/checkpoint.ckpt ...
+
+Train epoch:   9%|9         | 47/500 [1:59:23<19:10:15, 152.35s/it]
+
+Train epoch:   9%|9         | 47/500 [2:00:32<19:21:46, 153.88s/it]
+Traceback (most recent call last):
+  File "/home/nlp/ronke21/GutBrainIE_2025_Baseline/Train/RE/atlop_interface.py", line 468, in <module>
+main()
+  File "/home/nlp/ronke21/GutBrainIE_2025_Baseline/Train/RE/atlop_interface.py", line 403, in main
+train(args, model, train_features, dev_features, test_features)
+  File "/home/nlp/ronke21/GutBrainIE_2025_Baseline/Train/RE/atlop_interface.py", line 92, in train
+finetune(train_features, optimizer, args.num_train_epochs, num_steps)
+  File "/home/nlp/ronke21/GutBrainIE_2025_Baseline/Train/RE/atlop_interface.py", line 45, in finetune
+outputs = model(**inputs)
+  File "/home/nlp/ronke21/.conda/envs/gutbrain25/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+return self._call_impl(*args, **kwargs)
+  File "/home/nlp/ronke21/.conda/envs/gutbrain25/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+return forward_call(*args, **kwargs)
+  File "/home/nlp/ronke21/GutBrainIE_2025_Baseline/Train/RE/model.py", line 115, in forward
+labels = [torch.tensor(label) for label in labels]
+  File "/home/nlp/ronke21/GutBrainIE_2025_Baseline/Train/RE/model.py", line 115, in <listcomp>
+labels = [torch.tensor(label) for label in labels]
+KeyboardInterrupt

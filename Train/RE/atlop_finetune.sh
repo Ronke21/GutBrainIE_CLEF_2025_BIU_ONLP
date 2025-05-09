@@ -4,7 +4,7 @@ python atlop_interface.py --data_dir ./data/ \
 --train_file train_annotated.json \
 --save_path outputs/ \
 --dev_file dev.json \
---test_file dev.json \
+--test_file test.json \
 --train_batch_size 4 \
 --test_batch_size 8 \
 --gradient_accumulation_steps 1 \

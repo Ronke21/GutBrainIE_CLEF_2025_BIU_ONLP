@@ -9,18 +9,47 @@ import os
 from importlib.metadata import version
 version('GLiNER')
 
+# --- START OF ADDED PREPROCESSING FUNCTIONS ---
+
+def preprocess_data_item_tokens(item):
+    """
+    Preprocesses the 'tokenized_text' field in a data item by lowercasing each token.
+    Assumes 'tokenized_text' is a list of strings (tokens).
+    """
+    if "tokenized_text" in item and isinstance(item["tokenized_text"], list):
+        # Create a new list of lowercased tokens
+        item["tokenized_text"] = [token.lower() for token in item["tokenized_text"]]
+    # Entity labels are already converted to lowercase later in the script.
+    return item
+
+def preprocess_raw_text(text_input):
+    """
+    Preprocesses a raw text string by converting to lowercase and normalizing whitespace.
+    """
+    if isinstance(text_input, str):
+        # Lowercase
+        processed_text = text_input.lower()
+        # Normalize whitespace (remove extra spaces, strip leading/trailing)
+        processed_text = " ".join(processed_text.split())
+        return processed_text
+    return text_input # Return as is if not a string (e.g., None)
+
+# --- END OF ADDED PREPROCESSING FUNCTIONS ---
+
 # Set the GLiNER model to be used (from HuggingFace)
-model = GLiNER.from_pretrained("urchade/gliner_multi_pii-v1")
-model_name = "gliner_multi_pii-v1"
+model = GLiNER.from_pretrained("urchade/gliner_large-v2.1")
+model_name = "gliner_large-v2.1"
 
 # Define the confidence threshold to be used in evaluation
-THRESHOLD = 0.9 
+THRESHOLD = 0.9
 
 # Define whether the code should be used for fine-tuning
 finetune_model = True
+# Define whether predictions should be generated (assuming this is defined elsewhere or set as needed)
+generate_predictions = True # Placeholder: Ensure this is set according to your workflow
 
 # Define the path to articles for which the final trained will generate predicted entities
-PATH_ARTICLES = "../../Test_Data/articles_test.json" 
+PATH_ARTICLES = "../../Test_Data/articles_test.json"
 PATH_OUTPUT_NER_PREDICTIONS = f"../../Predictions/NER/predicted_entities_{model_name}_T{str(THRESHOLD*100)}.json"
 
 
@@ -32,53 +61,63 @@ PATH_BRONZE_TRAIN = "data/train_bronze.json"
 PATH_DEV = "data/dev.json"
 
 with open(PATH_PLATINUM_TRAIN, 'r', encoding='utf-8') as file:
-	train_platinum = json.load(file)
+    train_platinum = json.load(file)
 
 with open(PATH_GOLD_TRAIN, 'r', encoding='utf-8') as file:
-	train_gold = json.load(file)
+    train_gold = json.load(file)
 
 with open(PATH_SILVER_TRAIN, 'r', encoding='utf-8') as file:
-	train_silver = json.load(file)
-	
+    train_silver = json.load(file)
+
 with open(PATH_BRONZE_TRAIN, 'r', encoding='utf-8') as file:
-	train_bronze = json.load(file)
+    train_bronze = json.load(file)
 
 with open(PATH_DEV, 'r', encoding='utf-8') as file:
-	eval_data = json.load(file)
+    eval_data_loaded_from_file = json.load(file) # Renamed to avoid immediate reassignment confusion
+
+# --- APPLYING PREPROCESSING TO LOADED DATA ---
+print('## PREPROCESSING LOADED TRAINING AND EVALUATION DATA ##')
+train_platinum = [preprocess_data_item_tokens(d.copy()) for d in train_platinum]
+train_gold = [preprocess_data_item_tokens(d.copy()) for d in train_gold]
+train_silver = [preprocess_data_item_tokens(d.copy()) for d in train_silver]
+train_bronze = [preprocess_data_item_tokens(d.copy()) for d in train_bronze] # Preprocess bronze data as well
+eval_data_loaded_from_file = [preprocess_data_item_tokens(d.copy()) for d in eval_data_loaded_from_file]
+# --- END OF PREPROCESSING LOADED DATA ---
 
 # Set the data to be used for training
 # Here we used the platinum, gold, and silver sets
 train_data = train_platinum + train_gold + train_silver
 
-# converting entities-level train data to token-level 
+# converting entities-level train data to token-level
 new_data = []
-for d in train_data:
+for d in train_data: # train_data now contains preprocessed items
     new_ner = []
     for s, f, c in d["ner"]:
         for i in range(s, f + 1):
             # labels are intended to be lower-case
             new_ner.append((i, i, c.lower()))
     new_d = {
-        "tokenized_text": d["tokenized_text"],
+        "tokenized_text": d["tokenized_text"], # This is the preprocessed (lowercased) list of tokens
         "ner": new_ner,
     }
     new_data.append(new_d)
 train_data = new_data
 
-# converting entities-level eval data to token-level 
-new_data = []
-for d in eval_data:
+# converting entities-level eval data to token-level
+new_data_eval = []
+# Use the preprocessed eval_data_loaded_from_file for conversion
+for d in eval_data_loaded_from_file:
     new_ner = []
     for s, f, c in d["ner"]:
         for i in range(s, f + 1):
             # labels are intended to be lower-case
             new_ner.append((i, i, c.lower()))
     new_d = {
-        "tokenized_text": d["tokenized_text"],
+        "tokenized_text": d["tokenized_text"], # This is the preprocessed (lowercased) list of tokens
         "ner": new_ner,
     }
-    new_data.append(new_d)
-eval_data = new_data
+    new_data_eval.append(new_d)
+eval_data_samples = new_data_eval # This list of samples will be used in the eval_data dictionary
 
 from types import SimpleNamespace
 
@@ -86,11 +125,11 @@ from types import SimpleNamespace
 config = SimpleNamespace(
     num_steps=3000, # regulate number train, eval steps depending on the data size
     eval_every=200,
-    
+
     train_batch_size=8, # regulate batch size depending on GPU memory available.
-    
+
     max_len=384, # maximum sentence length. 2048 for NuNerZero_long_context, 384 for rest
-    
+
     save_directory="logs", # log dir
     device='cuda' if torch.cuda.is_available() else 'cpu', #'cuda', # training device - cpu or cuda
 
@@ -109,7 +148,8 @@ config = SimpleNamespace(
 # don't forget to do the same preprocessing as for the train data:
 # * converting entities-level data to token-level data
 # * making entity_types lower-cased!!!
-eval_data = {
+# * (Implicitly now) making tokenized_text in samples lower-cased
+eval_data_dict_for_model = { # Renamed to distinguish from the list 'eval_data_samples'
     "entity_types": [
         "anatomical location",
         "animal",
@@ -125,11 +165,11 @@ eval_data = {
         "microbiome",
         "statistical technique",
     ],
-    "samples": eval_data
+    "samples": eval_data_samples # Use the preprocessed and token-level converted samples
 }
 
-print('## DEFINING TRAINING FUNCTION ##') 
-def train(model, config, train_data, eval_data=None):
+print('## DEFINING TRAINING FUNCTION ##')
+def train(model, config, train_data, eval_data_param=None): # renamed eval_data to eval_data_param for clarity
     model = model.to(config.device)
 
     # Set sampling parameters from config
@@ -190,25 +230,21 @@ def train(model, config, train_data, eval_data=None):
         pbar.set_description(description)
 
         if (step + 1) % config.eval_every == 0:
-
             model.eval()
-
-            if eval_data is not None:
-                results, f1 = model.evaluate(eval_data["samples"], flat_ner=True, threshold=THRESHOLD, batch_size=32,
-                                     entity_types=eval_data["entity_types"])
-
+            if eval_data_param is not None:
+                results, f1 = model.evaluate(eval_data_param["samples"], flat_ner=True, threshold=THRESHOLD, batch_size=32,
+                                             entity_types=eval_data_param["entity_types"])
                 print(f"Step={step}\n{results}")
 
             if not os.path.exists(config.save_directory):
                 os.makedirs(config.save_directory)
 
             model.save_pretrained(f"{config.save_directory}/finetuned_{step}")
-
             model.train()
 
 if finetune_model:
     print('## LAUNCHING TRAINING ##')
-    train(model, config, train_data, eval_data)
+    train(model, config, train_data, eval_data_dict_for_model) # Pass the correctly structured eval data
 
     print('## SAVING TRAINED MODEL ##')
     output_path = f"outputs/{model_name}_finetuned_T{str(THRESHOLD*100)}"
@@ -218,61 +254,75 @@ if finetune_model:
 
 if generate_predictions:
     output_path = f"outputs/{model_name}_finetuned_T{str(THRESHOLD*100)}"
-    print(f"## LOADING PRE-TRAINED MODEL {output_path} ##")
-    md = GLiNER.from_pretrained(output_path, local_files_only=True)
+    # Ensure the model is loaded if not fine-tuned in the same run
+    if not finetune_model or 'md' not in locals():
+        print(f"## LOADING PRE-TRAINED MODEL {output_path} (for predictions) ##")
+        if os.path.exists(output_path):
+            md = GLiNER.from_pretrained(output_path, local_files_only=True)
+        else:
+            print(f"Model path {output_path} not found. Using the initially loaded model for predictions.")
+            md = model # Fallback to the model loaded at the script start (might be base or fine-tuned if finetune_model=True)
+    else:
+        print(f"## USING THE RECENTLY FINE-TUNED MODEL FROM {output_path} (for predictions) ##")
+
 
     print(f"## GENERATING NER PREDICTIONS FOR {PATH_ARTICLES}")
     with open(PATH_ARTICLES, 'r', encoding='utf-8') as file:
         articles = json.load(file)
 
     print(f"len(articles): {len(articles)}")
-    entity_labels = eval_data['entity_types']
+    # Use entity_types from the eval_data_dict_for_model for consistency
+    entity_labels = eval_data_dict_for_model['entity_types']
 
-    # Dictionary to hold predicted entities
-    # PMID -> {{'start_idx': ..., 'end_idx': ..., 'text_span': ..., 'entity_label': ..., 'score': ...}, ...}
-    predictions = {} 
+
+    predictions = {}
 
     for pmid, content in tqdm(articles.items(), total=len(articles), desc="Predicting entities..."):
-        title = content['title']
-        abstract = content['abstract']
+        # --- APPLYING PREPROCESSING TO TITLE AND ABSTRACT ---
+        title_text = preprocess_raw_text(content.get('title', '')) # Use .get for safety
+        abstract_text = preprocess_raw_text(content.get('abstract', '')) # Use .get for safety
+        # --- END OF PREPROCESSING ---
 
-        # Predict entities 
-        title_entities = md.predict_entities(title, entity_labels, threshold=THRESHOLD, flat_ner=True, multi_label=False)
-        abstract_entities = md.predict_entities(abstract, entity_labels, threshold=THRESHOLD, flat_ner=True, multi_label=False)
+        # Predict entities using preprocessed text
+        title_entities = md.predict_entities(title_text, entity_labels, threshold=THRESHOLD, flat_ner=True, multi_label=False)
+        abstract_entities = md.predict_entities(abstract_text, entity_labels, threshold=THRESHOLD, flat_ner=True, multi_label=False)
 
         # Adjust indices for predicted entities in the abstract
+        # This must use the length of the *preprocessed* title_text
+        # Concatenation usually assumes a space: "title. abstract"
+        # If title_text is empty, len(title_text) is 0. If not empty, add 1 for the space.
+        offset = len(title_text) + 1 if title_text else 0
         for entity in abstract_entities:
-            entity['start'] += len(title) + 1
-            entity['end'] += len(title) + 1
+            entity['start'] += offset
+            entity['end'] += offset
 
-        # Remove duplicates from predicted entities
         unique_entities = []
         seen_entities = set()
 
-        # Remove duplicates from title entities and add tag field with value 't'
         for entity in title_entities:
+            # key uses entity['text'] which is from the preprocessed title_text
             key = (entity['start'], entity['end'], entity['text'], entity['label'], entity['score'])
             if key not in seen_entities:
                 tmp_entity = {
                     'start_idx': entity['start'],
                     'end_idx': entity['end'],
                     'tag': 't',
-                    'text_span': entity['text'],
+                    'text_span': entity['text'], # This text will be from the preprocessed input
                     'entity_label': entity['label'],
                     'score': entity['score']
                 }
                 unique_entities.append(tmp_entity)
                 seen_entities.add(key)
 
-        # Remove duplicates from abstract entities and add tag field with value 'a'
         for entity in abstract_entities:
+            # key uses entity['text'] which is from the preprocessed abstract_text
             key = (entity['start'], entity['end'], entity['text'], entity['label'], entity['score'])
             if key not in seen_entities:
                 tmp_entity = {
                     'start_idx': entity['start'],
                     'end_idx': entity['end'],
                     'tag': 'a',
-                    'text_span': entity['text'],
+                    'text_span': entity['text'], # This text will be from the preprocessed input
                     'entity_label': entity['label'],
                     'score': entity['score']
                 }
@@ -282,16 +332,12 @@ if generate_predictions:
         predictions[pmid] = unique_entities
         articles[pmid]['pred_entities'] = unique_entities
 
-    # Convert any non-serializable data if necessary
     def default_serializer(obj):
         if isinstance(obj, set):
             return list(obj)
-        # Add other types if needed
         raise TypeError(f'Type {type(obj)} not serializable')
-    
+
     with open(PATH_OUTPUT_NER_PREDICTIONS, 'w', encoding='utf-8') as f:
         json.dump(articles, f, ensure_ascii=False, indent=2, default=default_serializer)
 
     print(f"## Predictions have been exported in JSON format to '/{PATH_OUTPUT_NER_PREDICTIONS}' ##")
-
-    

@@ -1,8 +1,0 @@
-Team ID - BIU_ONLP
-Task ID - T61
-Run ID - 1
-Type of training applied - fine tuning gliner_large_bio-v0.1_T90.0
-Pre-processing methods - None
-Training data used - Platinum + Gold + Silver
-Relevant details of the run - 
-A link to a GitHub repository enabling easy reproducibility of the run.
