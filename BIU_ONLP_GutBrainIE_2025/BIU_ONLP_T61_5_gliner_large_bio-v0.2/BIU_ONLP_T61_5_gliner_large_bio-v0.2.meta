@@ -1,8 +1,8 @@
 Team ID - BIU_ONLP
 Task ID - T61
 Run ID - 1
-Type of training applied - fine tuning gliner_multi_pii-v1
-Pre-processing methods - None
+Type of training applied - fine tuning gliner_large_bio-v0.2
+Pre-processing methods - lowerspace text, space normalization
 Training data used - Platinum + Gold + Silver
 A link to a GitHub repository enabling easy reproducibility of the run - https://github.com/Ronke21/GutBrainIE_CLEF_2025_BIU_ONLP
 Relevant details of the run - 
@@ -12,17 +12,8 @@ Relevant details of the run -
   "lr": "5e-5",
   "num_steps": 3000,
   "train_batch_size": 8,
-  "eval_every": 500,
+  "eval_every": 200,
   "max_width": 12,
-  "model_name": "gliner_multi_pii-v1",
+  "model_name": "gliner_large_bio-v0.2",
   "threshold": 0.9
 }
-
-Eval - 
-=== 6_1_NER ===
-Macro-precision: 0.7072
-Macro-recall: 0.6353
-Macro-F1: 0.6521
-Micro-precision: 0.7789
-Micro-recall: 0.7538
-Micro-F1: 0.7662
