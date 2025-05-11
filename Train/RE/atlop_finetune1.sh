@@ -1,12 +1,10 @@
-python atlop_interface.py --data_dir ./data \
+python atlop_interface.py --data_dir ./data/ \
 --transformer_type bert \
---model_name_or_path bert-base-cased \
+--model_name_or_path FacebookAI/roberta-large \
 --train_file train_annotated.json \
---save_path outputs/ \
---load_path outputs/ \
---load_checkpoint best.ckpt \
+--save_path outputs1/ \
 --dev_file dev.json \
---test_file predicted_entities_atlop_format.json \
+--test_file dev.json \
 --train_batch_size 4 \
 --test_batch_size 4 \
 --gradient_accumulation_steps 1 \
@@ -17,5 +15,3 @@ python atlop_interface.py --data_dir ./data \
 --num_train_epochs 500.0 \
 --seed 66 \
 --num_class 18
-
-mv outputs/results.json ../../Predictions/RE/predicted_relations.json

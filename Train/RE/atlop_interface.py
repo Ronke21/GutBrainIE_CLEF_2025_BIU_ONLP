@@ -304,7 +304,7 @@ def main():
 
     parser.add_argument("--train_file", default="train_annotated.json", type=str)
     parser.add_argument("--dev_file", default="dev.json", type=str)
-    parser.add_argument("--test_file", default="dev.json", type=str)
+    parser.add_argument("--test_file", default="test.json", type=str)
     parser.add_argument("--pred_file", default="results.json", type=str)
     parser.add_argument("--save_path", default="", type=str)
     parser.add_argument("--load_path", default="", type=str)

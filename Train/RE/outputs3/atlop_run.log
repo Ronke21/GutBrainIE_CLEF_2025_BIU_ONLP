@@ -1,0 +1,722 @@
+Number of devices available: 1
+Cuda current device: 0
+
+config.json:   0%|          | 0.00/289 [00:00<?, ?B/s]
+
+config.json: 100%|##########| 289/289 [00:00<00:00, 1.95MB/s]
+
+vocab.txt:   0%|          | 0.00/467k [00:00<?, ?B/s]
+
+vocab.txt: 100%|##########| 467k/467k [00:05<00:00, 89.7kB/s]
+
+vocab.txt: 100%|##########| 467k/467k [00:05<00:00, 89.7kB/s]
+
+Example:   0%|          | 0/766 [00:00<?, ?it/s]
+
+Example:   1%|          | 5/766 [00:00<00:16, 45.91it/s]
+
+Example:   1%|1         | 10/766 [00:00<00:26, 29.04it/s]
+
+Example:   2%|1         | 14/766 [00:00<00:23, 32.45it/s]
+
+Example:   2%|2         | 18/766 [00:00<00:24, 30.38it/s]
+
+Example:   3%|3         | 23/766 [00:00<00:21, 34.25it/s]
+
+Example:   4%|3         | 27/766 [00:00<00:21, 34.26it/s]
+
+Example:   4%|4         | 31/766 [00:00<00:24, 29.65it/s]
+
+Example:   5%|4         | 37/766 [00:01<00:20, 34.85it/s]
+
+Example:   5%|5         | 41/766 [00:01<00:33, 21.64it/s]
+
+Example:   6%|5         | 44/766 [00:01<00:33, 21.42it/s]
+
+Example:   6%|6         | 47/766 [00:01<00:33, 21.76it/s]
+
+Example:   7%|6         | 51/766 [00:01<00:30, 23.13it/s]
+
+Example:   7%|7         | 56/766 [00:02<00:25, 28.32it/s]
+
+Example:   8%|7         | 61/766 [00:02<00:22, 31.93it/s]
+
+Example:   9%|8         | 67/766 [00:02<00:18, 38.24it/s]
+
+Example:   9%|9         | 72/766 [00:02<00:17, 40.63it/s]
+
+Example:  10%|#         | 77/766 [00:02<00:29, 23.39it/s]
+
+Example:  11%|#         | 81/766 [00:02<00:27, 25.05it/s]
+
+Example:  11%|#1        | 86/766 [00:02<00:23, 29.38it/s]
+
+Example:  12%|#1        | 90/766 [00:03<00:41, 16.25it/s]
+
+Example:  12%|#2        | 95/766 [00:03<00:33, 20.21it/s]
+
+Example:  13%|#3        | 102/766 [00:03<00:25, 25.76it/s]
+
+Example:  14%|#3        | 107/766 [00:03<00:22, 29.46it/s]
+
+Example:  14%|#4        | 111/766 [00:04<00:21, 30.73it/s]
+
+Example:  15%|#5        | 115/766 [00:04<00:22, 28.34it/s]
+
+Example:  16%|#5        | 119/766 [00:04<00:21, 29.53it/s]
+
+Example:  16%|#6        | 125/766 [00:04<00:18, 35.57it/s]
+
+Example:  17%|#7        | 132/766 [00:04<00:14, 43.42it/s]
+
+Example:  18%|#7        | 137/766 [00:04<00:18, 34.75it/s]
+
+Example:  19%|#8        | 142/766 [00:04<00:19, 31.38it/s]
+
+Example:  19%|#9        | 149/766 [00:05<00:17, 34.64it/s]
+
+Example:  20%|##        | 155/766 [00:05<00:15, 39.74it/s]
+
+Example:  21%|##        | 160/766 [00:05<00:16, 37.07it/s]
+
+Example:  22%|##1       | 167/766 [00:05<00:20, 29.16it/s]
+
+Example:  23%|##2       | 173/766 [00:05<00:17, 33.85it/s]
+
+Example:  24%|##3       | 181/766 [00:05<00:14, 41.35it/s]
+
+Example:  24%|##4       | 187/766 [00:06<00:12, 45.06it/s]
+
+Example:  25%|##5       | 193/766 [00:06<00:12, 46.45it/s]
+
+Example:  26%|##6       | 200/766 [00:06<00:11, 49.58it/s]
+
+Example:  27%|##7       | 208/766 [00:06<00:10, 53.99it/s]
+
+Example:  28%|##7       | 214/766 [00:06<00:10, 55.19it/s]
+
+Example:  29%|##8       | 220/766 [00:06<00:11, 46.28it/s]
+
+Example:  30%|##9       | 227/766 [00:06<00:10, 51.11it/s]
+
+Example:  31%|###       | 234/766 [00:06<00:10, 49.47it/s]
+
+Example:  31%|###1      | 241/766 [00:07<00:10, 52.01it/s]
+
+Example:  32%|###2      | 247/766 [00:07<00:10, 49.49it/s]
+
+Example:  33%|###3      | 254/766 [00:07<00:09, 54.27it/s]
+
+Example:  34%|###4      | 261/766 [00:07<00:09, 51.04it/s]
+
+Example:  35%|###4      | 267/766 [00:07<00:09, 50.26it/s]
+
+Example:  36%|###5      | 274/766 [00:07<00:09, 54.59it/s]
+
+Example:  37%|###6      | 280/766 [00:07<00:10, 46.96it/s]
+
+Example:  37%|###7      | 287/766 [00:07<00:09, 52.12it/s]
+
+Example:  38%|###8      | 293/766 [00:08<00:08, 52.82it/s]
+
+Example:  39%|###9      | 299/766 [00:08<00:12, 36.29it/s]
+
+Example:  40%|###9      | 304/766 [00:08<00:13, 34.88it/s]
+
+Example:  41%|####      | 311/766 [00:08<00:11, 40.55it/s]
+
+Example:  41%|####1     | 316/766 [00:08<00:11, 39.69it/s]
+
+Example:  42%|####1     | 321/766 [00:08<00:11, 39.91it/s]
+
+Example:  43%|####2     | 326/766 [00:09<00:10, 41.96it/s]
+
+Example:  43%|####3     | 332/766 [00:09<00:09, 45.56it/s]
+
+Example:  44%|####4     | 338/766 [00:09<00:08, 48.80it/s]
+
+Example:  45%|####5     | 345/766 [00:09<00:07, 52.69it/s]
+
+Example:  46%|####5     | 351/766 [00:09<00:09, 41.99it/s]
+
+Example:  46%|####6     | 356/766 [00:09<00:09, 43.17it/s]
+
+Example:  47%|####7     | 361/766 [00:09<00:11, 35.79it/s]
+
+Example:  48%|####7     | 365/766 [00:09<00:11, 34.87it/s]
+
+Example:  48%|####8     | 369/766 [00:10<00:13, 29.52it/s]
+
+Example:  49%|####8     | 373/766 [00:10<00:13, 29.86it/s]
+
+Example:  49%|####9     | 378/766 [00:10<00:11, 32.85it/s]
+
+Example:  50%|####9     | 382/766 [00:10<00:12, 30.77it/s]
+
+Example:  51%|#####     | 387/766 [00:10<00:11, 34.07it/s]
+
+Example:  51%|#####1    | 391/766 [00:10<00:11, 32.14it/s]
+
+Example:  52%|#####1    | 395/766 [00:11<00:15, 23.97it/s]
+
+Example:  52%|#####2    | 400/766 [00:11<00:19, 18.83it/s]
+
+Example:  53%|#####2    | 403/766 [00:11<00:23, 15.36it/s]
+
+Example:  53%|#####3    | 407/766 [00:11<00:19, 18.36it/s]
+
+Example:  54%|#####3    | 410/766 [00:12<00:21, 16.66it/s]
+
+Example:  54%|#####4    | 417/766 [00:12<00:14, 24.68it/s]
+
+Example:  55%|#####5    | 424/766 [00:12<00:10, 32.41it/s]
+
+Example:  56%|#####6    | 431/766 [00:12<00:08, 40.04it/s]
+
+Example:  57%|#####7    | 437/766 [00:13<00:15, 21.43it/s]
+
+Example:  58%|#####7    | 443/766 [00:13<00:12, 26.21it/s]
+
+Example:  58%|#####8    | 448/766 [00:13<00:12, 24.46it/s]
+
+Example:  59%|#####9    | 452/766 [00:13<00:14, 21.80it/s]
+
+Example:  60%|#####9    | 456/766 [00:13<00:12, 24.28it/s]
+
+Example:  60%|######    | 462/766 [00:13<00:10, 29.85it/s]
+
+Example:  61%|######    | 466/766 [00:14<00:10, 29.62it/s]
+
+Example:  61%|######1   | 470/766 [00:14<00:09, 29.68it/s]
+
+Example:  62%|######1   | 474/766 [00:14<00:09, 30.11it/s]
+
+Example:  62%|######2   | 478/766 [00:14<00:09, 31.01it/s]
+
+Example:  63%|######3   | 484/766 [00:14<00:07, 37.69it/s]
+
+Example:  64%|######3   | 489/766 [00:14<00:07, 38.31it/s]
+
+Example:  64%|######4   | 494/766 [00:14<00:08, 32.63it/s]
+
+Example:  65%|######5   | 498/766 [00:14<00:08, 33.32it/s]
+
+Example:  66%|######5   | 502/766 [00:15<00:07, 34.12it/s]
+
+Example:  66%|######6   | 508/766 [00:15<00:07, 33.22it/s]
+
+Example:  67%|######7   | 514/766 [00:15<00:06, 37.11it/s]
+
+Example:  68%|######7   | 518/766 [00:15<00:06, 36.56it/s]
+
+Example:  68%|######8   | 522/766 [00:15<00:06, 35.62it/s]
+
+Example:  69%|######8   | 526/766 [00:15<00:10, 22.42it/s]
+
+Example:  69%|######9   | 530/766 [00:16<00:09, 25.36it/s]
+
+Example:  70%|######9   | 535/766 [00:16<00:07, 29.25it/s]
+
+Example:  70%|#######   | 540/766 [00:16<00:06, 33.69it/s]
+
+Example:  71%|#######1  | 544/766 [00:16<00:06, 33.35it/s]
+
+Example:  72%|#######2  | 552/766 [00:16<00:04, 43.89it/s]
+
+Example:  73%|#######2  | 558/766 [00:16<00:04, 46.84it/s]
+
+Example:  74%|#######3  | 564/766 [00:16<00:04, 46.62it/s]
+
+Example:  75%|#######4  | 571/766 [00:16<00:03, 52.15it/s]
+
+Example:  75%|#######5  | 577/766 [00:17<00:04, 41.96it/s]
+
+Example:  76%|#######6  | 583/766 [00:17<00:04, 45.73it/s]
+
+Example:  77%|#######6  | 589/766 [00:17<00:03, 48.12it/s]
+
+Example:  78%|#######7  | 595/766 [00:17<00:03, 46.15it/s]
+
+Example:  78%|#######8  | 600/766 [00:17<00:03, 42.26it/s]
+
+Example:  79%|#######8  | 605/766 [00:17<00:04, 36.95it/s]
+
+Example:  80%|#######9  | 609/766 [00:17<00:04, 37.41it/s]
+
+Example:  80%|########  | 615/766 [00:17<00:03, 42.39it/s]
+
+Example:  81%|########  | 620/766 [00:18<00:03, 38.27it/s]
+
+Example:  82%|########1 | 625/766 [00:18<00:03, 38.43it/s]
+
+Example:  82%|########2 | 630/766 [00:18<00:03, 34.09it/s]
+
+Example:  83%|########2 | 634/766 [00:18<00:04, 27.34it/s]
+
+Example:  83%|########3 | 638/766 [00:18<00:04, 27.05it/s]
+
+Example:  84%|########3 | 642/766 [00:18<00:04, 29.39it/s]
+
+Example:  85%|########4 | 650/766 [00:19<00:02, 39.01it/s]
+
+Example:  86%|########5 | 655/766 [00:19<00:04, 27.23it/s]
+
+Example:  86%|########6 | 661/766 [00:19<00:03, 32.20it/s]
+
+Example:  87%|########7 | 667/766 [00:19<00:03, 30.83it/s]
+
+Example:  88%|########7 | 674/766 [00:19<00:02, 35.78it/s]
+
+Example:  89%|########8 | 679/766 [00:20<00:02, 35.34it/s]
+
+Example:  89%|########9 | 683/766 [00:20<00:03, 26.48it/s]
+
+Example:  90%|########9 | 689/766 [00:20<00:02, 32.28it/s]
+
+Example:  91%|######### | 694/766 [00:21<00:04, 16.92it/s]
+
+Example:  91%|######### | 697/766 [00:21<00:03, 18.05it/s]
+
+Example:  92%|#########1| 703/766 [00:21<00:02, 24.06it/s]
+
+Example:  93%|#########2| 709/766 [00:21<00:01, 30.10it/s]
+
+Example:  93%|#########3| 715/766 [00:21<00:01, 34.24it/s]
+
+Example:  94%|#########4| 721/766 [00:21<00:01, 38.58it/s]
+
+Example:  95%|#########5| 728/766 [00:21<00:00, 41.37it/s]
+
+Example:  96%|#########5| 733/766 [00:21<00:00, 38.84it/s]
+
+Example:  96%|#########6| 738/766 [00:22<00:00, 36.21it/s]
+
+Example:  97%|#########6| 742/766 [00:22<00:00, 35.12it/s]
+
+Example:  98%|#########7| 747/766 [00:22<00:00, 37.39it/s]
+
+Example:  98%|#########8| 752/766 [00:22<00:00, 39.68it/s]
+
+Example:  99%|#########8| 757/766 [00:22<00:00, 35.85it/s]
+
+Example:  99%|#########9| 761/766 [00:22<00:00, 34.69it/s]
+
+Example: 100%|##########| 766/766 [00:22<00:00, 33.62it/s]
+
+Example:   0%|          | 0/40 [00:00<?, ?it/s]
+
+Example:  15%|#5        | 6/40 [00:00<00:00, 58.61it/s]
+
+Example:  30%|###       | 12/40 [00:00<00:00, 31.78it/s]
+
+Example:  40%|####      | 16/40 [00:00<00:00, 33.21it/s]
+
+Example:  55%|#####5    | 22/40 [00:00<00:00, 39.63it/s]
+
+Example:  75%|#######5  | 30/40 [00:00<00:00, 49.77it/s]
+
+Example:  90%|######### | 36/40 [00:00<00:00, 49.90it/s]
+
+Example: 100%|##########| 40/40 [00:00<00:00, 45.66it/s]
+
+Example:   0%|          | 0/40 [00:00<?, ?it/s]
+
+Example:  15%|#5        | 6/40 [00:00<00:00, 58.11it/s]
+
+Example:  30%|###       | 12/40 [00:00<00:00, 31.81it/s]
+
+Example:  40%|####      | 16/40 [00:00<00:00, 33.17it/s]
+
+Example:  55%|#####5    | 22/40 [00:00<00:00, 39.36it/s]
+
+Example:  75%|#######5  | 30/40 [00:00<00:00, 50.49it/s]
+
+Example:  90%|######### | 36/40 [00:00<00:00, 50.87it/s]
+
+Example: 100%|##########| 40/40 [00:00<00:00, 46.21it/s]
+
+pytorch_model.bin:   0%|          | 0.00/1.46G [00:00<?, ?B/s]
+
+pytorch_model.bin:   1%|          | 10.5M/1.46G [00:00<01:13, 19.7MB/s]
+
+pytorch_model.bin:   1%|1         | 21.0M/1.46G [00:00<00:46, 31.1MB/s]
+
+pytorch_model.bin:   2%|2         | 31.5M/1.46G [00:00<00:37, 38.1MB/s]
+
+pytorch_model.bin:   3%|2         | 41.9M/1.46G [00:01<00:33, 42.6MB/s]
+
+pytorch_model.bin:   4%|3         | 52.4M/1.46G [00:01<00:30, 45.7MB/s]
+
+pytorch_model.bin:   4%|4         | 62.9M/1.46G [00:01<00:29, 47.8MB/s]
+
+pytorch_model.bin:   5%|5         | 73.4M/1.46G [00:01<00:28, 48.8MB/s]
+
+pytorch_model.bin:   6%|5         | 83.9M/1.46G [00:01<00:27, 50.2MB/s]
+
+pytorch_model.bin:   6%|6         | 94.4M/1.46G [00:02<00:26, 50.9MB/s]
+
+pytorch_model.bin:   7%|7         | 105M/1.46G [00:02<00:26, 51.0MB/s]
+
+pytorch_model.bin:   8%|7         | 115M/1.46G [00:02<00:26, 51.3MB/s]
+
+pytorch_model.bin:   9%|8         | 126M/1.46G [00:02<00:25, 51.4MB/s]
+
+pytorch_model.bin:   9%|9         | 136M/1.46G [00:02<00:25, 51.7MB/s]
+
+pytorch_model.bin:  10%|#         | 147M/1.46G [00:03<00:25, 51.9MB/s]
+
+pytorch_model.bin:  11%|#         | 157M/1.46G [00:03<00:25, 52.0MB/s]
+
+pytorch_model.bin:  11%|#1        | 168M/1.46G [00:03<00:24, 52.2MB/s]
+
+pytorch_model.bin:  12%|#2        | 178M/1.46G [00:03<00:24, 52.1MB/s]
+
+pytorch_model.bin:  13%|#2        | 189M/1.46G [00:03<00:24, 52.4MB/s]
+
+pytorch_model.bin:  14%|#3        | 199M/1.46G [00:04<00:24, 52.5MB/s]
+
+pytorch_model.bin:  14%|#4        | 210M/1.46G [00:04<00:23, 52.4MB/s]
+
+pytorch_model.bin:  15%|#5        | 220M/1.46G [00:04<00:23, 52.6MB/s]
+
+pytorch_model.bin:  16%|#5        | 231M/1.46G [00:04<00:23, 52.6MB/s]
+
+pytorch_model.bin:  16%|#6        | 241M/1.46G [00:04<00:23, 52.3MB/s]
+
+pytorch_model.bin:  17%|#7        | 252M/1.46G [00:05<00:23, 52.3MB/s]
+
+pytorch_model.bin:  18%|#7        | 262M/1.46G [00:05<00:22, 52.5MB/s]
+
+pytorch_model.bin:  19%|#8        | 273M/1.46G [00:05<00:22, 52.5MB/s]
+
+pytorch_model.bin:  19%|#9        | 283M/1.46G [00:05<00:22, 52.5MB/s]
+
+pytorch_model.bin:  20%|##        | 294M/1.46G [00:05<00:22, 52.3MB/s]
+
+pytorch_model.bin:  21%|##        | 304M/1.46G [00:06<00:22, 52.2MB/s]
+
+pytorch_model.bin:  22%|##1       | 315M/1.46G [00:06<00:21, 52.2MB/s]
+
+pytorch_model.bin:  22%|##2       | 325M/1.46G [00:06<00:21, 52.4MB/s]
+
+pytorch_model.bin:  23%|##2       | 336M/1.46G [00:06<00:21, 52.5MB/s]
+
+pytorch_model.bin:  24%|##3       | 346M/1.46G [00:06<00:21, 52.6MB/s]
+
+pytorch_model.bin:  24%|##4       | 357M/1.46G [00:07<00:21, 52.6MB/s]
+
+pytorch_model.bin:  25%|##5       | 367M/1.46G [00:07<00:20, 52.6MB/s]
+
+pytorch_model.bin:  26%|##5       | 377M/1.46G [00:07<00:20, 52.6MB/s]
+
+pytorch_model.bin:  27%|##6       | 388M/1.46G [00:07<00:20, 52.5MB/s]
+
+pytorch_model.bin:  27%|##7       | 398M/1.46G [00:07<00:20, 52.3MB/s]
+
+pytorch_model.bin:  28%|##7       | 409M/1.46G [00:08<00:20, 52.4MB/s]
+
+pytorch_model.bin:  29%|##8       | 419M/1.46G [00:08<00:19, 52.5MB/s]
+
+pytorch_model.bin:  29%|##9       | 430M/1.46G [00:08<00:19, 52.6MB/s]
+
+pytorch_model.bin:  30%|###       | 440M/1.46G [00:08<00:19, 52.2MB/s]
+
+pytorch_model.bin:  31%|###       | 451M/1.46G [00:08<00:19, 52.3MB/s]
+
+pytorch_model.bin:  32%|###1      | 461M/1.46G [00:09<00:19, 52.6MB/s]
+
+pytorch_model.bin:  32%|###2      | 472M/1.46G [00:09<00:18, 52.5MB/s]
+
+pytorch_model.bin:  33%|###2      | 482M/1.46G [00:09<00:18, 52.7MB/s]
+
+pytorch_model.bin:  34%|###3      | 493M/1.46G [00:09<00:18, 52.4MB/s]
+
+pytorch_model.bin:  34%|###4      | 503M/1.46G [00:09<00:18, 52.6MB/s]
+
+pytorch_model.bin:  35%|###5      | 514M/1.46G [00:10<00:18, 52.6MB/s]
+
+pytorch_model.bin:  36%|###5      | 524M/1.46G [00:10<00:17, 52.7MB/s]
+
+pytorch_model.bin:  37%|###6      | 535M/1.46G [00:10<00:17, 52.8MB/s]
+
+pytorch_model.bin:  37%|###7      | 545M/1.46G [00:10<00:17, 52.7MB/s]
+
+pytorch_model.bin:  38%|###8      | 556M/1.46G [00:10<00:17, 52.7MB/s]
+
+pytorch_model.bin:  39%|###8      | 566M/1.46G [00:11<00:17, 52.6MB/s]
+
+pytorch_model.bin:  39%|###9      | 577M/1.46G [00:11<00:17, 51.6MB/s]
+
+pytorch_model.bin:  40%|####      | 587M/1.46G [00:11<00:16, 52.0MB/s]
+
+pytorch_model.bin:  41%|####      | 598M/1.46G [00:11<00:16, 52.3MB/s]
+
+pytorch_model.bin:  42%|####1     | 608M/1.46G [00:11<00:16, 52.3MB/s]
+
+pytorch_model.bin:  42%|####2     | 619M/1.46G [00:12<00:16, 52.4MB/s]
+
+pytorch_model.bin:  43%|####3     | 629M/1.46G [00:12<00:15, 52.7MB/s]
+
+pytorch_model.bin:  44%|####3     | 640M/1.46G [00:12<00:15, 52.7MB/s]
+
+pytorch_model.bin:  44%|####4     | 650M/1.46G [00:12<00:15, 52.4MB/s]
+
+pytorch_model.bin:  45%|####5     | 661M/1.46G [00:12<00:15, 52.5MB/s]
+
+pytorch_model.bin:  46%|####5     | 671M/1.46G [00:13<00:15, 52.5MB/s]
+
+pytorch_model.bin:  47%|####6     | 682M/1.46G [00:13<00:14, 52.8MB/s]
+
+pytorch_model.bin:  47%|####7     | 692M/1.46G [00:13<00:14, 52.8MB/s]
+
+pytorch_model.bin:  48%|####8     | 703M/1.46G [00:13<00:14, 52.9MB/s]
+
+pytorch_model.bin:  49%|####8     | 713M/1.46G [00:13<00:14, 52.7MB/s]
+
+pytorch_model.bin:  49%|####9     | 724M/1.46G [00:14<00:13, 52.7MB/s]
+
+pytorch_model.bin:  50%|#####     | 734M/1.46G [00:14<00:13, 52.4MB/s]
+
+pytorch_model.bin:  51%|#####     | 744M/1.46G [00:14<00:13, 52.5MB/s]
+
+pytorch_model.bin:  52%|#####1    | 755M/1.46G [00:14<00:13, 52.6MB/s]
+
+pytorch_model.bin:  52%|#####2    | 765M/1.46G [00:14<00:13, 52.2MB/s]
+
+pytorch_model.bin:  53%|#####3    | 776M/1.46G [00:15<00:13, 52.4MB/s]
+
+pytorch_model.bin:  54%|#####3    | 786M/1.46G [00:15<00:12, 52.6MB/s]
+
+pytorch_model.bin:  55%|#####4    | 797M/1.46G [00:15<00:12, 52.7MB/s]
+
+pytorch_model.bin:  55%|#####5    | 807M/1.46G [00:15<00:12, 52.6MB/s]
+
+pytorch_model.bin:  56%|#####5    | 818M/1.46G [00:15<00:12, 52.5MB/s]
+
+pytorch_model.bin:  57%|#####6    | 828M/1.46G [00:16<00:12, 52.6MB/s]
+
+pytorch_model.bin:  57%|#####7    | 839M/1.46G [00:16<00:11, 52.7MB/s]
+
+pytorch_model.bin:  58%|#####8    | 849M/1.46G [00:16<00:11, 52.3MB/s]
+
+pytorch_model.bin:  59%|#####8    | 860M/1.46G [00:16<00:11, 52.3MB/s]
+
+pytorch_model.bin:  60%|#####9    | 870M/1.46G [00:16<00:11, 52.5MB/s]
+
+pytorch_model.bin:  60%|######    | 881M/1.46G [00:17<00:11, 52.6MB/s]
+
+pytorch_model.bin:  61%|######    | 891M/1.46G [00:17<00:10, 52.8MB/s]
+
+pytorch_model.bin:  62%|######1   | 902M/1.46G [00:17<00:10, 52.8MB/s]
+
+pytorch_model.bin:  62%|######2   | 912M/1.46G [00:17<00:10, 52.6MB/s]
+
+pytorch_model.bin:  63%|######3   | 923M/1.46G [00:17<00:10, 51.2MB/s]
+
+pytorch_model.bin:  64%|######3   | 933M/1.46G [00:18<00:10, 51.6MB/s]
+
+pytorch_model.bin:  65%|######4   | 944M/1.46G [00:18<00:09, 51.9MB/s]
+
+pytorch_model.bin:  65%|######5   | 954M/1.46G [00:18<00:09, 52.3MB/s]
+
+pytorch_model.bin:  66%|######5   | 965M/1.46G [00:18<00:09, 52.5MB/s]
+
+pytorch_model.bin:  67%|######6   | 975M/1.46G [00:18<00:09, 52.1MB/s]
+
+pytorch_model.bin:  67%|######7   | 986M/1.46G [00:19<00:09, 52.3MB/s]
+
+pytorch_model.bin:  68%|######8   | 996M/1.46G [00:19<00:12, 37.3MB/s]
+
+pytorch_model.bin:  69%|######8   | 1.01G/1.46G [00:19<00:11, 40.8MB/s]
+
+pytorch_model.bin:  70%|######9   | 1.02G/1.46G [00:20<00:10, 43.6MB/s]
+
+pytorch_model.bin:  70%|#######   | 1.03G/1.46G [00:20<00:09, 45.9MB/s]
+
+pytorch_model.bin:  71%|#######1  | 1.04G/1.46G [00:20<00:08, 47.7MB/s]
+
+pytorch_model.bin:  72%|#######1  | 1.05G/1.46G [00:20<00:08, 49.1MB/s]
+
+pytorch_model.bin:  72%|#######2  | 1.06G/1.46G [00:20<00:08, 49.9MB/s]
+
+pytorch_model.bin:  73%|#######3  | 1.07G/1.46G [00:21<00:07, 50.6MB/s]
+
+pytorch_model.bin:  74%|#######3  | 1.08G/1.46G [00:21<00:07, 50.6MB/s]
+
+pytorch_model.bin:  75%|#######4  | 1.09G/1.46G [00:21<00:07, 51.2MB/s]
+
+pytorch_model.bin:  75%|#######5  | 1.10G/1.46G [00:21<00:06, 51.7MB/s]
+
+pytorch_model.bin:  76%|#######6  | 1.11G/1.46G [00:21<00:06, 52.2MB/s]
+
+pytorch_model.bin:  77%|#######6  | 1.12G/1.46G [00:22<00:06, 52.4MB/s]
+
+pytorch_model.bin:  77%|#######7  | 1.13G/1.46G [00:22<00:06, 52.6MB/s]
+
+pytorch_model.bin:  78%|#######8  | 1.14G/1.46G [00:22<00:06, 52.7MB/s]
+
+pytorch_model.bin:  79%|#######8  | 1.15G/1.46G [00:22<00:05, 52.7MB/s]
+
+pytorch_model.bin:  80%|#######9  | 1.16G/1.46G [00:22<00:05, 52.7MB/s]
+
+pytorch_model.bin:  80%|########  | 1.17G/1.46G [00:23<00:05, 51.7MB/s]
+
+pytorch_model.bin:  81%|########1 | 1.18G/1.46G [00:23<00:05, 50.9MB/s]
+
+pytorch_model.bin:  82%|########1 | 1.20G/1.46G [00:23<00:05, 49.7MB/s]
+
+pytorch_model.bin:  82%|########2 | 1.21G/1.46G [00:23<00:05, 49.7MB/s]
+
+pytorch_model.bin:  83%|########3 | 1.22G/1.46G [00:23<00:04, 50.4MB/s]
+
+pytorch_model.bin:  84%|########3 | 1.23G/1.46G [00:24<00:04, 50.7MB/s]
+
+pytorch_model.bin:  85%|########4 | 1.24G/1.46G [00:24<00:04, 51.2MB/s]
+
+pytorch_model.bin:  85%|########5 | 1.25G/1.46G [00:24<00:04, 51.6MB/s]
+
+pytorch_model.bin:  86%|########6 | 1.26G/1.46G [00:24<00:03, 52.0MB/s]
+
+pytorch_model.bin:  87%|########6 | 1.27G/1.46G [00:24<00:03, 52.2MB/s]
+
+pytorch_model.bin:  88%|########7 | 1.28G/1.46G [00:25<00:03, 52.3MB/s]
+
+pytorch_model.bin:  88%|########8 | 1.29G/1.46G [00:25<00:03, 52.5MB/s]
+
+pytorch_model.bin:  89%|########8 | 1.30G/1.46G [00:25<00:03, 52.4MB/s]
+
+pytorch_model.bin:  90%|########9 | 1.31G/1.46G [00:25<00:02, 52.4MB/s]
+
+pytorch_model.bin:  90%|######### | 1.32G/1.46G [00:25<00:02, 52.6MB/s]
+
+pytorch_model.bin:  91%|#########1| 1.33G/1.46G [00:26<00:02, 52.5MB/s]
+
+pytorch_model.bin:  92%|#########1| 1.34G/1.46G [00:26<00:02, 52.5MB/s]
+
+pytorch_model.bin:  93%|#########2| 1.35G/1.46G [00:26<00:02, 52.6MB/s]
+
+pytorch_model.bin:  93%|#########3| 1.36G/1.46G [00:26<00:01, 52.6MB/s]
+
+pytorch_model.bin:  94%|#########3| 1.37G/1.46G [00:26<00:01, 52.6MB/s]
+
+pytorch_model.bin:  95%|#########4| 1.38G/1.46G [00:27<00:01, 52.5MB/s]
+
+pytorch_model.bin:  95%|#########5| 1.39G/1.46G [00:27<00:01, 52.8MB/s]
+
+pytorch_model.bin:  96%|#########6| 1.41G/1.46G [00:27<00:01, 52.8MB/s]
+
+pytorch_model.bin:  97%|#########6| 1.42G/1.46G [00:27<00:00, 52.9MB/s]
+
+pytorch_model.bin:  98%|#########7| 1.43G/1.46G [00:27<00:00, 52.9MB/s]
+
+pytorch_model.bin:  98%|#########8| 1.44G/1.46G [00:28<00:00, 52.8MB/s]
+
+pytorch_model.bin:  99%|#########8| 1.45G/1.46G [00:28<00:00, 52.7MB/s]
+
+pytorch_model.bin: 100%|#########9| 1.46G/1.46G [00:28<00:00, 52.8MB/s]
+
+pytorch_model.bin: 100%|##########| 1.46G/1.46G [00:28<00:00, 51.2MB/s]
+/home/nlp/ronke21/.conda/envs/gutbrain25/lib/python3.10/site-packages/transformers/optimization.py:591: FutureWarning: This implementation of AdamW is deprecated and will be removed in a future version. Use the PyTorch implementation torch.optim.AdamW instead, or set `no_deprecation_warning=True` to disable this warning
+  warnings.warn(
+/home/nlp/ronke21/GutBrainIE_2025_Baseline/Train/RE/atlop_interface.py:32: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  scaler = GradScaler()
+Total steps: 95500
+Warmup steps: 5730
+
+Train epoch:   0%|          | 0/500 [00:00<?, ?it/s]
+Starting evaluation step ...
+Length preds: 34644
+Length answer: 0
+[CHECKPOINT] Saving model checkpoint at epoch 0 into outputs3/checkpoint.ckpt ...
+[BEST] Saving best model (epoch: 0) into outputs3/best.ckpt ...
+
+Train epoch:   0%|          | 1/500 [02:16<18:56:28, 136.65s/it]
+Starting evaluation step ...
+Length preds: 34644
+Length answer: 0
+[CHECKPOINT] Saving model checkpoint at epoch 1 into outputs3/checkpoint.ckpt ...
+
+Train epoch:   0%|          | 2/500 [04:28<18:33:00, 134.10s/it]
+Starting evaluation step ...
+Length preds: 34644
+Length answer: 0
+[CHECKPOINT] Saving model checkpoint at epoch 2 into outputs3/checkpoint.ckpt ...
+
+Train epoch:   1%|          | 3/500 [06:38<18:15:14, 132.22s/it]
+Starting evaluation step ...
+Length preds: 34644
+Length answer: 7
+[CHECKPOINT] Saving model checkpoint at epoch 3 into outputs3/checkpoint.ckpt ...
+
+Train epoch:   1%|          | 4/500 [08:50<18:10:21, 131.90s/it]
+Starting evaluation step ...
+Length preds: 34644
+Length answer: 0
+[CHECKPOINT] Saving model checkpoint at epoch 4 into outputs3/checkpoint.ckpt ...
+
+Train epoch:   1%|1         | 5/500 [11:01<18:07:23, 131.81s/it]
+Starting evaluation step ...
+Length preds: 34644
+Length answer: 0
+[CHECKPOINT] Saving model checkpoint at epoch 5 into outputs3/checkpoint.ckpt ...
+
+Train epoch:   1%|1         | 6/500 [13:14<18:06:41, 131.99s/it]
+Starting evaluation step ...
+Length preds: 34644
+Length answer: 1
+[CHECKPOINT] Saving model checkpoint at epoch 6 into outputs3/checkpoint.ckpt ...
+[BEST] Saving best model (epoch: 6) into outputs3/best.ckpt ...
+
+Train epoch:   1%|1         | 7/500 [15:31<18:17:34, 133.58s/it]
+Starting evaluation step ...
+Length preds: 34644
+Length answer: 366
+[CHECKPOINT] Saving model checkpoint at epoch 7 into outputs3/checkpoint.ckpt ...
+[BEST] Saving best model (epoch: 7) into outputs3/best.ckpt ...
+
+Train epoch:   2%|1         | 8/500 [17:54<18:39:58, 136.58s/it]
+Starting evaluation step ...
+Length preds: 34644
+Length answer: 244
+[CHECKPOINT] Saving model checkpoint at epoch 8 into outputs3/checkpoint.ckpt ...
+
+Train epoch:   2%|1         | 9/500 [20:06<18:27:53, 135.38s/it]
+Starting evaluation step ...
+Length preds: 34644
+Length answer: 369
+[CHECKPOINT] Saving model checkpoint at epoch 9 into outputs3/checkpoint.ckpt ...
+[BEST] Saving best model (epoch: 9) into outputs3/best.ckpt ...
+
+Train epoch:   2%|2         | 10/500 [22:25<18:34:33, 136.48s/it]
+Starting evaluation step ...
+Length preds: 34644
+Length answer: 328
+[CHECKPOINT] Saving model checkpoint at epoch 10 into outputs3/checkpoint.ckpt ...
+[BEST] Saving best model (epoch: 10) into outputs3/best.ckpt ...
+
+Train epoch:   2%|2         | 11/500 [24:45<18:41:11, 137.57s/it]
+Starting evaluation step ...
+Length preds: 34644
+Length answer: 325
+[CHECKPOINT] Saving model checkpoint at epoch 11 into outputs3/checkpoint.ckpt ...
+
+Train epoch:   2%|2         | 12/500 [26:58<18:25:53, 135.97s/it]
+Starting evaluation step ...
+Length preds: 34644
+Length answer: 559
+[CHECKPOINT] Saving model checkpoint at epoch 12 into outputs3/checkpoint.ckpt ...
+
+Train epoch:   3%|2         | 13/500 [29:08<18:09:46, 134.26s/it]
+Starting evaluation step ...
+Length preds: 34644
+Length answer: 426
+[CHECKPOINT] Saving model checkpoint at epoch 13 into outputs3/checkpoint.ckpt ...
+[BEST] Saving best model (epoch: 13) into outputs3/best.ckpt ...
+
+Train epoch:   3%|2         | 14/500 [31:27<18:19:42, 135.77s/it]
+Starting evaluation step ...
+Length preds: 34644
+Length answer: 497
+[CHECKPOINT] Saving model checkpoint at epoch 14 into outputs3/checkpoint.ckpt ...
+
+Train epoch:   3%|3         | 15/500 [33:37<18:03:25, 134.03s/it]

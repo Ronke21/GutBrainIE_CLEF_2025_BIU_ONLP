@@ -5,6 +5,7 @@ PATH_GOLD_TRAIN = "data/train_gold.json"
 PATH_SILVER_TRAIN = "data/train_silver.json"
 PATH_BRONZE_TRAIN = "data/train_bronze.json"
 PATH_DEV = "data/dev.json"
+PATH_TEST = "data/test.json"
 
 with open(PATH_PLATINUM_TRAIN, 'r', encoding='utf-8') as file:
 	train_platinum = json.load(file)
@@ -20,6 +21,9 @@ with open(PATH_BRONZE_TRAIN, 'r', encoding='utf-8') as file:
 
 with open(PATH_DEV, 'r', encoding='utf-8') as file:
 	eval_data = json.load(file)
+
+with open(PATH_TEST, 'r', encoding='utf-8') as file:
+	test_data = json.load(file)
 
 # Set the data to be used for training
 # Here we used the platinum, gold, and silver sets

@@ -1,12 +1,12 @@
 python atlop_interface.py --data_dir ./data/ \
 --transformer_type bert \
---model_name_or_path FacebookAI/roberta-large \
+--model_name_or_path bert-base-cased \
 --train_file train_annotated.json \
 --save_path outputs/ \
 --dev_file dev.json \
---test_file test.json \
+--test_file dev.json \
 --train_batch_size 4 \
---test_batch_size 8 \
+--test_batch_size 4 \
 --gradient_accumulation_steps 1 \
 --num_labels 1 \
 --learning_rate 5e-5 \

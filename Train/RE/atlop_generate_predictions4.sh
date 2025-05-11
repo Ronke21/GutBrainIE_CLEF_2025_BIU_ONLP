@@ -1,9 +1,9 @@
 python atlop_interface.py --data_dir ./data \
 --transformer_type bert \
---model_name_or_path bert-base-cased \
+--model_name_or_path monologg/biobert_v1.1_pubmed \
 --train_file train_annotated.json \
---save_path outputs/ \
---load_path outputs/ \
+--save_path outputs4/ \
+--load_path outputs5/ \
 --load_checkpoint best.ckpt \
 --dev_file dev.json \
 --test_file predicted_entities_atlop_format.json \
@@ -18,4 +18,4 @@ python atlop_interface.py --data_dir ./data \
 --seed 66 \
 --num_class 18
 
-mv outputs/results.json ../../Predictions/RE/predicted_relations.json
+mv outputs5/results.json ../../Predictions/RE/predicted_relations5.json
