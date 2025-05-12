@@ -147,7 +147,3 @@ pip install torch torchvision torchaudio --index-url https://download.pytorch.or
 ```
 
 ---
-
-## Contributions & Contact
-
-Feel free to open issues if you have any questions or improvements. For further inquiries, please reach out at: [martinell2@dei.unipd.it](mailto:martinell2@dei.unipd.it).

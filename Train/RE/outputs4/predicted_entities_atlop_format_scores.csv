@@ -1,0 +1,4 @@
+	precision	recall	F1
+test_rel	0.0	0.0	0
+test_rel_ign	0.0	0.0	0
+test_evi	0.0	0.0	0

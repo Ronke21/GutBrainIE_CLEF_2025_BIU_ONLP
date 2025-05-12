@@ -1,0 +1,17 @@
+Team ID - BIU_ONLP
+Task ID - T622
+Run ID - 3
+Type of training applied - fine tuning monologg/biobert_v1.1_pubmed
+Pre-processing methods - lowerspace text, space normalization
+Training data used - Platinum + Gold + Silver
+A link to a GitHub repository enabling easy reproducibility of the run - https://github.com/Ronke21/GutBrainIE_CLEF_2025_BIU_ONLP
+Relevant details of the run - 
+
+{
+  "lr": "5e-5",
+  "num_epochs": 500,
+  "train_batch_size": 4,
+  "model_name": "monologg/biobert_v1.1_pubmed",
+  "learning_rate": 5e-5
+  "warmup_ratio": 0.06
+}
